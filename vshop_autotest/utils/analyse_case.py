@@ -35,4 +35,3 @@ if __name__ == '__main__':
     R = Read_Excel(1)
     A = AnalyseCase(R.data)
     pprint(A.analyse_case())
-    print("汤钦松")
