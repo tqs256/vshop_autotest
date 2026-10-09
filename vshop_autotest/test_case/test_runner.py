@@ -40,7 +40,6 @@ class Testrunner:
 
         # 4：提取所需数据（提取到外层）
         json_extractor(case,all,resp)
-        print("汤钦松")
         # try:
         #     token = eval(case['jsonExData']) if isinstance(case['jsonExData'],str) else None
         #     print(type(token))
