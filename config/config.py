@@ -4,3 +4,4 @@ BASE_URL = "http://127.0.0.1:8000"
 FILE_PATH = r"D:\python_tqs\vshop_autotest\data\test_data.xlsx"
 SHEET_USER_NAME = "user_table"
 SHEET_NAME = "Sheet1"
+ACCOUNT_ID = 1
