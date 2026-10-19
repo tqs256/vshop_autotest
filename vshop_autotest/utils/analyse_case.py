@@ -3,12 +3,13 @@ from pprint import pprint
 from unittest import case
 
 from config.config import BASE_URL
-from vshop_autotest.utils.excel_utils import Read_Excel
+from vshop_autotest.utils.excel_utils import Read_Excel, ExcelReader
 
 
 class AnalyseCase():
     def __init__(self,case):
-        self.case = case
+
+        self.case = case[0] if isinstance(case, list) else case
 
 
     def analyse_case(self):
@@ -32,6 +33,7 @@ class AnalyseCase():
         return request_data
 
 if __name__ == '__main__':
-    R = Read_Excel(1)
-    A = AnalyseCase(R.data)
-    pprint(A.analyse_case())
+    R = ExcelReader()
+    r = R.get_business_data()
+    A = AnalyseCase(r)
+    print(A.analyse_case())

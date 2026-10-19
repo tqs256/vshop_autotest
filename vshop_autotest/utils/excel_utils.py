@@ -27,14 +27,16 @@ class ExcelReader:
 
         wb = self._wb()
         ws = wb[self.sheet_user_name]
-        for row in ws.iter_rows(min_row=self.account,values_only=True):
+        for row in ws.iter_rows(min_row=self.account + 2,values_only=True):
             if row[0] == self.account:
                 self.username = row[1]
                 self.password = row[2]
+                return
         raise ValueError (f"没有用户id为{self.account}的用户")
 
     def get_login_data(self):
 
+        self._load_user()
         wb = self._wb()
         ws = wb[self.sheet_case_name]
         keys = [cell.value for cell in ws[2]]
@@ -122,7 +124,7 @@ class Read_Excel:
 
 if __name__ == '__main__':
     A = ExcelReader()
-    # print(A.get_login_data())
-    pprint(A.get_business_data())
+    print(A.get_login_data())
+    print(A.get_business_data())
 
 
