@@ -69,7 +69,8 @@ class ExcelReader:
                     username = self.username,
                     password = self.password
                 )
-            business_data.append(dict_data)
+            if dict_data['is_True']:
+                business_data.append(dict_data)
         return business_data
 
 
